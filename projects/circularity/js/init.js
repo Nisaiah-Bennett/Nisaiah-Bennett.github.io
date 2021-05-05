@@ -75,14 +75,22 @@ var init = function (window) {
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
+
+             // if the circles go past the LEFT side place them on the RIGHT 
+            if ( circle.x < 0){
+                circle.x = canvas.width;
+            }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
+            // if the circle has gone past the bottom of the canvas then we move it back to the top
             if ( circle.y > canvas.height){
                 circle.y = 0;
             }
+           
+            
 
-            if ( circle.x < 0){
-                circle.x = 0;
+            if ( circle.y < 0) {
+                circle.y = canvas.height;
             }
 
 
